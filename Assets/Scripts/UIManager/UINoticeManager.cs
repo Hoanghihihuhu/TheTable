@@ -32,6 +32,10 @@ public class UINoticeManager : MonoBehaviour
     public Color questStartedColor = new Color(1f, 0.84f, 0f); // Yellow
     [Tooltip("Color for quest completed notification (Green)")]
     public Color questCompletedColor = new Color(0f, 0.8f, 0.2f); // Green
+    [Tooltip("Color for step started notification (Yellow)")]
+    public Color stepStartedColor = new Color(1f, 0.84f, 0f); // Yellow
+    [Tooltip("Color for step completed notification (Green)")]
+    public Color stepCompletedColor = new Color(0f, 0.8f, 0.2f); // Green
 
     private Queue<NoticeData> noticeQueue = new Queue<NoticeData>();
     private bool isDisplaying = false;
@@ -47,7 +51,10 @@ public class UINoticeManager : MonoBehaviour
     public enum NoticeType
     {
         QuestStarted,
-        QuestCompleted
+        QuestCompleted,
+        StepStarted,
+        StepCompleted,
+        JustTalk
     }
 
     void Awake()
@@ -105,6 +112,22 @@ public class UINoticeManager : MonoBehaviour
         ShowNotice($"Quest Completed: {questName}", NoticeType.QuestCompleted);
     }
 
+    /// <summary>
+    /// Show step started notice
+    /// </summary>
+    public void ShowStepStarted(string stepDescription)
+    {
+        ShowNotice(stepDescription, NoticeType.StepStarted);
+    }
+
+    /// <summary>
+    /// Show step completed notice
+    /// </summary>
+    public void ShowStepCompleted(string stepDescription)
+    {
+        ShowNotice($"Completed: {stepDescription}", NoticeType.StepCompleted);
+    }
+
     private IEnumerator ProcessNoticeQueue()
     {
         isDisplaying = true;
@@ -140,6 +163,15 @@ public class UINoticeManager : MonoBehaviour
                 break;
             case NoticeType.QuestCompleted:
                 targetColor = questCompletedColor; // Green
+                break;
+            case NoticeType.StepStarted:
+                targetColor = stepStartedColor; // Yellow
+                break;
+            case NoticeType.StepCompleted:
+                targetColor = stepCompletedColor; // Green
+                break;
+            case NoticeType.JustTalk:
+                targetColor = Color.white;
                 break;
         }
 

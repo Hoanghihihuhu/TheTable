@@ -45,6 +45,8 @@ public class QuestManager : MonoBehaviour
         // Subscribe to quest events to show notices
         OnQuestStarted += HandleQuestStarted;
         OnQuestCompleted += HandleQuestCompleted;
+        OnStepChanged += HandleStepChanged;
+        OnStepCompleted += HandleStepCompleted;
     }
 
     void OnDestroy()
@@ -52,6 +54,8 @@ public class QuestManager : MonoBehaviour
         // Unsubscribe from events
         OnQuestStarted -= HandleQuestStarted;
         OnQuestCompleted -= HandleQuestCompleted;
+        OnStepChanged -= HandleStepChanged;
+        OnStepCompleted -= HandleStepCompleted;
     }
 
     private void HandleQuestStarted(Quest quest)
@@ -67,6 +71,22 @@ public class QuestManager : MonoBehaviour
         if (UINoticeManager.Instance != null)
         {
             UINoticeManager.Instance.ShowQuestCompleted(quest.questName);
+        }
+    }
+
+    private void HandleStepChanged(QuestStep step)
+    {
+        if (UINoticeManager.Instance != null && step != null)
+        {
+            UINoticeManager.Instance.ShowStepStarted(step.stepDescription);
+        }
+    }
+
+    private void HandleStepCompleted(QuestStep step)
+    {
+        if (UINoticeManager.Instance != null && step != null)
+        {
+            UINoticeManager.Instance.ShowStepCompleted(step.stepDescription);
         }
     }
 
@@ -123,7 +143,6 @@ public class QuestManager : MonoBehaviour
             return false;
         }
 
-        Debug.Log($"[QuestManager] Started quest: {questID}");
         OnQuestStarted?.Invoke(quest);
         return true;
     }
@@ -156,7 +175,6 @@ public class QuestManager : MonoBehaviour
         else
         {
             // Quest completed
-            Debug.Log($"[QuestManager] Quest {activeQuest.questID} completed!");
             OnQuestCompleted?.Invoke(activeQuest);
             activeQuest = null;
         }
