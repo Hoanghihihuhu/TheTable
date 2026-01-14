@@ -45,8 +45,8 @@ public class TalkToNPCStep : QuestStep
         // Unsubscribe from events
         QuestEventSystem.OnNPCDialogFinished -= HandleNPCDialogFinished;
 
-        // Hide NPC object if option is enabled
-        if (showTargetOnlyWhenActive && npcObject != null)
+        // Hide NPC object nếu được cấu hình chỉ hiển thị khi active và cho phép ẩn khi hoàn thành
+        if (showTargetOnlyWhenActive && hideTargetOnlyWhenDone && npcObject != null)
         {
             npcObject.SetActive(false);
         }

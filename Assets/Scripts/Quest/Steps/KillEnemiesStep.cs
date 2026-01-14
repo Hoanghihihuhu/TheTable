@@ -15,6 +15,12 @@ public class KillEnemiesStep : QuestStep
     [Tooltip("List of enemy GameObjects to kill. If empty, any enemy with matching ID will count.")]
     [SerializeField] private List<GameObject> targetEnemies = new List<GameObject>();
 
+    [Header("Related Objects")]
+    [Tooltip("Other GameObjects related to this step (NPCs, props, etc.). They will be enabled when the step starts and disabled/destroyed when it completes.")]
+    [SerializeField] private List<GameObject> stepRelatedObjects = new List<GameObject>();
+    [Tooltip("If true, related objects will be Destroyed on step complete. If false, they will be SetActive(false).")]
+    [SerializeField] private bool destroyRelatedObjectsOnComplete = false;
+
     [Header("Guidance")]
     [SerializeField] private bool showGuidance = true;
     [Tooltip("Show marker at first enemy position for guidance")]
@@ -35,6 +41,18 @@ public class KillEnemiesStep : QuestStep
                 }
             }
         }
+
+        // Hide related objects initially if option is enabled
+        if (showTargetOnlyWhenActive && stepRelatedObjects != null)
+        {
+            foreach (GameObject obj in stepRelatedObjects)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(false);
+                }
+            }
+        }
     }
 
     protected override void OnActivate()
@@ -51,6 +69,18 @@ public class KillEnemiesStep : QuestStep
                 if (enemy != null)
                 {
                     enemy.SetActive(true);
+                }
+            }
+        }
+
+        // Show related objects when step is activated
+        if (showTargetOnlyWhenActive && stepRelatedObjects != null)
+        {
+            foreach (GameObject obj in stepRelatedObjects)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(true);
                 }
             }
         }
@@ -84,14 +114,33 @@ public class KillEnemiesStep : QuestStep
         // Unsubscribe from events
         QuestEventSystem.OnEnemyKilled -= HandleEnemyKilled;
 
-        // Hide enemies if option is enabled
-        if (showTargetOnlyWhenActive && targetEnemies != null)
+        // Hide enemies nếu được cấu hình chỉ hiển thị khi active và cho phép ẩn khi hoàn thành
+        if (hideTargetOnlyWhenDone && showTargetOnlyWhenActive && targetEnemies != null)
         {
             foreach (GameObject enemy in targetEnemies)
             {
                 if (enemy != null)
                 {
                     enemy.SetActive(false);
+                }
+            }
+        }
+
+        // Hide hoặc destroy related objects nếu cho phép ẩn khi hoàn thành
+        if (hideTargetOnlyWhenDone && stepRelatedObjects != null)
+        {
+            foreach (GameObject obj in stepRelatedObjects)
+            {
+                if (obj != null)
+                {
+                    if (destroyRelatedObjectsOnComplete)
+                    {
+                        Destroy(obj);
+                    }
+                    else
+                    {
+                        obj.SetActive(false);
+                    }
                 }
             }
         }

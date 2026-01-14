@@ -59,3 +59,6 @@ TagManager:
   - name: Decor
     uniqueID: 1386869619
     locked: 0
+  - name: Canvas
+    uniqueID: 269491579
+    locked: 0
