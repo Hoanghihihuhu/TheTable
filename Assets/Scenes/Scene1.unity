@@ -862,6 +862,7 @@ MonoBehaviour:
   stepID: st5
   stepDescription: "Di chuy\u1EC3n \u0111\u1EBFn khu v\u1EF1c ch\u1EC9 "
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt5
   showGuidance: 1
@@ -2079,7 +2080,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 369716842}
-  - component: {fileID: 369716843}
   m_Layer: 0
   m_Name: Quest1
   m_TagString: Untagged
@@ -2108,19 +2108,6 @@ Transform:
   - {fileID: 175109841}
   m_Father: {fileID: 1520488027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &369716843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369716841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eecb1e4db2716e4c921051a371b187b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questID: Q1
 --- !u!1 &371993255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2030722827104836253, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
@@ -16179,6 +16166,7 @@ MonoBehaviour:
   stepID: st1
   stepDescription: "T\xECm A L\xE2m"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 1
   targetNPCID: npc1
   showGuidance: 1
@@ -18307,6 +18295,7 @@ MonoBehaviour:
   stepID: st4
   stepDescription: "Nh\u1EA5n D \u0111\u1EC3 qua ph\u1EA3i"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt4
   showGuidance: 1
@@ -18583,7 +18572,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: awidhaoiwhd uwhaidh diawhdoiaw  diwahodi diawjdoi
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e301928c671dc7a4f81c56ff39f711a8, type: 2}
   m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -18647,7 +18636,7 @@ MonoBehaviour:
   m_margin: {x: -127.91327, y: -33.056213, z: 24.432861, w: -53.177406}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &672964479
@@ -19575,7 +19564,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 828131937}
-  - component: {fileID: 828131938}
   m_Layer: 0
   m_Name: Quest2
   m_TagString: Untagged
@@ -19602,19 +19590,6 @@ Transform:
   - {fileID: 1741594034}
   m_Father: {fileID: 1520488027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &828131938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828131936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eecb1e4db2716e4c921051a371b187b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questID: Q1
 --- !u!1 &833831176
 GameObject:
   m_ObjectHideFlags: 0
@@ -36152,6 +36127,7 @@ MonoBehaviour:
   stepID: st2.3
   stepDescription: "\u0110i \u0111\u1EBFn \u0111i\u1EC3m ch\u1EC9 \u0111\u1ECBnh"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt2.3
   showGuidance: 1
@@ -37468,7 +37444,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e301928c671dc7a4f81c56ff39f711a8, type: 2}
   m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -37532,7 +37508,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1075951021
@@ -37578,7 +37554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1102197519
 Transform:
   m_ObjectHideFlags: 0
@@ -37620,6 +37596,7 @@ MonoBehaviour:
   - "L\xEAn \u0111\u01B0\u1EDDng \u0111i"
   - "B\xECnh Minh \u0111ang \u0111\u1EE3i b\u1EA1n"
   characterName: "M\u1ECDi ng\u01B0\u1EDDi"
+  nextSceneName: Scene2
   mainCamera: {fileID: 1527239558}
   introCamera: {fileID: 1182763969}
 --- !u!1 &1103238759
@@ -38607,8 +38584,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mafia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
-  m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -38729,11 +38706,14 @@ MonoBehaviour:
   stepID: KS2.2
   stepDescription: "Ti\xEAu di\u1EC7t k\u1EBB \u0111\u1ECBch b\u1EB1ng s\xFAng"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 1
   requiredKills: 1
   targetEnemyID: EID2.2
   targetEnemies:
   - {fileID: 929859087}
+  stepRelatedObjects: []
+  destroyRelatedObjectsOnComplete: 0
   showGuidance: 1
   showMarkerAtEnemy: 1
 --- !u!1 &1259578293
@@ -39027,8 +39007,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mafia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
-  m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39309,6 +39289,7 @@ MonoBehaviour:
   stepID: st3
   stepDescription: "Nh\u1EA5n W \u0111\u1EC3 \u0111i l\xEAn"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt3
   showGuidance: 1
@@ -40587,8 +40568,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mafia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
-  m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -41767,11 +41748,14 @@ MonoBehaviour:
   stepDescription: "S\u1EED d\u1EE5ng m\u1ECDi h\u1ECFa l\u1EF1c \u0111\u1EC3 ti\xEAu
     di\u1EC7t xe "
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 1
   requiredKills: 1
   targetEnemyID: EID2.4
   targetEnemies:
   - {fileID: 2122683019}
+  stepRelatedObjects: []
+  destroyRelatedObjectsOnComplete: 0
   showGuidance: 1
   showMarkerAtEnemy: 1
 --- !u!1 &1759136050
@@ -42340,6 +42324,7 @@ MonoBehaviour:
   stepID: st2.1
   stepDescription: "\u0110i \u0111\u1EBFn \u0111i\u1EC3m ch\u1EC9 \u0111\u1ECBnh"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt2.1
   showGuidance: 1
@@ -42634,6 +42619,7 @@ MonoBehaviour:
   stepID: st1
   stepDescription: "Nh\u1EA5n S \u0111\u1EC3 \u0111i xu\u1ED1ng"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt1
   showGuidance: 1
@@ -42749,8 +42735,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mafia
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
-  m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -43341,6 +43327,7 @@ MonoBehaviour:
   stepID: st2
   stepDescription: "Nh\u1EA5n A \u0111\u1EC3 \u0111i qua tr\xE1i"
   showTargetOnlyWhenActive: 1
+  hideTargetOnlyWhenDone: 1
   showCompletionNotice: 0
   targetAreaID: lt2
   showGuidance: 1
@@ -43683,7 +43670,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371993255}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 0a0de34e36f98d3419cf4a8367cdb6dd, type: 2}
   m_InitialState: 1
@@ -43756,8 +43743,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "C\u1EA3nh s\xE1t"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
-  m_sharedMaterial: {fileID: -5924343038442449669, guid: 225a96df82f70f34cbc11d507c577925, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
