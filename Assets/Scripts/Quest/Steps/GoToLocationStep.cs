@@ -52,8 +52,8 @@ public class GoToLocationStep : QuestStep
         // Unsubscribe from events
         QuestEventSystem.OnPlayerEnterArea -= HandlePlayerEnterArea;
 
-        // Hide target marker if option is enabled
-        if (showTargetOnlyWhenActive && locationMarker != null)
+        // Hide target marker nếu step chỉ hiển thị khi active và cho phép ẩn khi hoàn thành
+        if (showTargetOnlyWhenActive && hideTargetOnlyWhenDone && locationMarker != null)
         {
             locationMarker.gameObject.SetActive(false);
         }

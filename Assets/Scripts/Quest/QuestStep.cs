@@ -15,6 +15,7 @@ public abstract class QuestStep : MonoBehaviour
     [Header("Target Display")]
     [Tooltip("Only show target (guidance/highlight) when this step is active")]
     [SerializeField] protected bool showTargetOnlyWhenActive = true;
+    [SerializeField] protected bool hideTargetOnlyWhenDone = true;
 
     [Header("Notice Settings")]
     [Tooltip("Show completion notice when step is completed. Default: true (shows both start and completion)")]
