@@ -2764,20 +2764,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2030722827104836253, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
   m_PrefabInstance: {fileID: 308503903972898994}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &918594531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918594515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99bdbe2b72d0eb545a1efe121ea8a7c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoDataList:
-  - {fileID: 11400000, guid: eb6f582f88d992c438a9d54d47c44056, type: 2}
 --- !u!1 &957107944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7338,49 +7324,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3503010931331313128, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: gunWeaponAmmoData
-      value: 
-      objectReference: {fileID: 11400000, guid: b7463d7022506d44b9f53bb5ea671685, type: 2}
-    - target: {fileID: 3503010931331313128, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: gunTankHitParticlePrefab
-      value: 
-      objectReference: {fileID: 5880797563127281583, guid: 265d3a5ba69981a4698ceabcedf368b0, type: 3}
-    - target: {fileID: 3886959826157827423, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: footstepClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 90ddc90e61ad78c4a8ae86a09af0c318, type: 3}
-    - target: {fileID: 3886959826157827423, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: footstepInterval
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3886959826157827423, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: firePointOffset.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3886959826157827423, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: firePointOffset.y
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3886959826157827423, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: footstepAudioSource
-      value: 
-      objectReference: {fileID: 1697573257}
-    - target: {fileID: 3886959826157827423, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: tankHitParticlePrefab
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5015159225077511678, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.011869341
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2030722827104836253, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 918594531}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13f2b4e6e3b84644187af713351c966f, type: 3}
 --- !u!1 &417655870836964546
 GameObject:
