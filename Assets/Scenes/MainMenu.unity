@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 226148737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1672582920}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &226148737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,6 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e122333e395434688f3e93f0f8bbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Scene1
   welcomeText: {fileID: 0}
   pressAnywhereText: {fileID: 1625447337}
   menuPanel: {fileID: 422511058}
@@ -1279,7 +1292,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2100960093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1672582920}
+        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2100960093
 MonoBehaviour:
   m_ObjectHideFlags: 0

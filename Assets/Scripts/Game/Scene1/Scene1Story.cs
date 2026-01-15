@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scene1Story : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Scene1Story : MonoBehaviour
     public List<GameObject> toDestroyList;
     public string[] chatOutro = { "", "", "" };
     public string characterName = "ADMIN";
+    [SerializeField] private string nextSceneName = "Scene 2";
+
     void Awake()
     {
         if (Instance == null)
@@ -20,8 +23,32 @@ public class Scene1Story : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QuestManager.Instance.OnQuestCompleted += HandleQuestCompleted;
         SetUp();
         StartCoroutine(ShowIntroText());
+    }
+
+    void OnDestroy()
+    {
+        if (QuestManager.Instance != null)
+        {
+            QuestManager.Instance.OnQuestCompleted -= HandleQuestCompleted;
+        }
+    }
+
+    private void HandleQuestCompleted(Quest quest)
+    {
+        if (quest.questID == "Q2")
+        {
+            UIChatManager.Instance.SendChat("Kỹ năng cần thời gian mài dũa, thời gian có hạn....", "Tôi", ChatPosition.Right);
+            StartCoroutine(LoadSceneAfterDelay());
+        }
+    }
+
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(nextSceneName);
     }
 
     void SetUp()

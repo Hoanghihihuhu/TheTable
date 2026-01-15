@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 4101244990309421372}
   - component: {fileID: 4668191842220274544}
   - component: {fileID: 1524339677295340598}
-  - component: {fileID: 5803219514224418901}
+  - component: {fileID: 7966285851112841623}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -698,7 +698,7 @@ MonoBehaviour:
   grenadeMaxStack: 10
   molotovMaxStack: 10
   c4MaxStack: 5
---- !u!114 &5803219514224418901
+--- !u!114 &7966285851112841623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

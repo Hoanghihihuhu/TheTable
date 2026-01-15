@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: New Weapon Ammo Data
   m_EditorClassIdentifier: 
   ammoType: 2
-  initialMagazineAmmo: 30
-  initialReserveAmmo: 90
+  initialMagazineAmmo: 300
+  initialReserveAmmo: 9000
   fireMode: 1
   burstCount: 3
   burstInterval: 0.1
