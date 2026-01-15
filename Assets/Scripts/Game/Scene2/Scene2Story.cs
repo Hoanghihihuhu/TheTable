@@ -11,7 +11,7 @@ public class Scene2Story : MonoBehaviour
     public string you = "Tôi";
     public string yourName = "Hoàng";
     [SerializeField] private string nextSceneName = "Scene 3";
-    
+
     void Awake()
     {
         if (Instance == null)
@@ -25,7 +25,7 @@ public class Scene2Story : MonoBehaviour
         QuestManager.Instance.OnQuestCompleted += HandleQuestCompleted;
         StartCoroutine(ShowIntroText());
     }
-    
+
     void OnDestroy()
     {
         if (QuestManager.Instance != null)
@@ -33,7 +33,7 @@ public class Scene2Story : MonoBehaviour
             QuestManager.Instance.OnQuestCompleted -= HandleQuestCompleted;
         }
     }
-    
+
     private void HandleQuestCompleted(Quest quest)
     {
         if (quest.questID == "Q2.1")
@@ -42,7 +42,7 @@ public class Scene2Story : MonoBehaviour
             StartCoroutine(LoadSceneAfterDelay());
         }
     }
-    
+
     private IEnumerator LoadSceneAfterDelay()
     {
         yield return new WaitForSeconds(5f);
@@ -52,9 +52,9 @@ public class Scene2Story : MonoBehaviour
     IEnumerator ShowIntroText()
     {
         yield return new WaitForSeconds(3f);
-        UIChatManager.Instance.SendChat("Chúng ta đã ở đây trước cả cảnh sát.", you, ChatPosition.Right);
+        UIChatManager.Instance.SendChat("Cậu cũng tới đây vì vụ mất tích hàng loạt đó sao?.", you, ChatPosition.Right);
         UIChatManager.Instance.SendChat(
-            $"Thôi nào {yourName}? Cảnh sát mà có tác dụng thì mafia đâu lộng hành",
+            $"Đúng rồi {yourName}! Chúng ta cùng điều tra xem thử nào!",
             npcName, ChatPosition.Left);
         UIChatManager.Instance.SendChat(
             $"Chia nhau ra tìm manh mối, tôi sẽ đi về phía Tây.",
