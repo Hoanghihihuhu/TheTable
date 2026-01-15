@@ -38,7 +38,7 @@ public class Scene1Story : MonoBehaviour
 
     private void HandleQuestCompleted(Quest quest)
     {
-        if (quest.questID == "Q1")
+        if (quest.questID == "Q2")
         {
             UIChatManager.Instance.SendChat("Kỹ năng cần thời gian mài dũa, thời gian có hạn....", "Tôi", ChatPosition.Right);
             StartCoroutine(LoadSceneAfterDelay());

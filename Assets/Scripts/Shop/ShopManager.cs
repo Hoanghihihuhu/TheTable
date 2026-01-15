@@ -24,25 +24,13 @@ public class ShopManager : MonoBehaviour
     public event Action<string> OnPurchaseSuccess; // itemName
     public event Action<string> OnPurchaseFailed; // reason
     
-    // Singleton pattern
-    public static ShopManager Instance { get; private set; }
-    
     // Property để lấy số tiền hiện có (cho UI)
     public int MyWallet => currentMoney;
     
-    void Awake()
+    void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            currentMoney = startingMoney;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+        currentMoney = startingMoney;
+        OnMoneyChanged?.Invoke(currentMoney);
     }
     
     /// <summary>

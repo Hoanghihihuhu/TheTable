@@ -39,11 +39,20 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private Color normalButtonColor = Color.white;
     [SerializeField] private Color insufficientMoneyColor = Color.red;
     
+    [Header("Shop Manager Reference")]
+    [SerializeField] private ShopManager shopManager;
+    
     private bool isShopOpen = false;
     private Tween errorMessageTween;
     
     void Start()
     {
+        // Tìm ShopManager nếu chưa được gán
+        if (shopManager == null)
+        {
+            shopManager = FindObjectOfType<ShopManager>();
+        }
+        
         // Ẩn shop panel ban đầu
         if (shopPanel != null)
         {
@@ -83,15 +92,19 @@ public class ShopUI : MonoBehaviour
         }
         
         // Subscribe to ShopManager events
-        if (ShopManager.Instance != null)
+        if (shopManager != null)
         {
-            ShopManager.Instance.OnMoneyChanged += UpdateMoneyDisplay;
-            ShopManager.Instance.OnPurchaseSuccess += OnPurchaseSuccess;
-            ShopManager.Instance.OnPurchaseFailed += OnPurchaseFailed;
+            shopManager.OnMoneyChanged += UpdateMoneyDisplay;
+            shopManager.OnPurchaseSuccess += OnPurchaseSuccess;
+            shopManager.OnPurchaseFailed += OnPurchaseFailed;
+            
+            // Update initial money display
+            UpdateMoneyDisplay(shopManager.MyWallet);
         }
-        
-        // Update initial money display
-        UpdateMoneyDisplay(ShopManager.Instance != null ? ShopManager.Instance.MyWallet : 0);
+        else
+        {
+            Debug.LogWarning("ShopUI: Không tìm thấy ShopManager trong scene!");
+        }
         
         // Update price displays
         UpdatePriceDisplays();
@@ -100,11 +113,11 @@ public class ShopUI : MonoBehaviour
     void OnDestroy()
     {
         // Unsubscribe from events
-        if (ShopManager.Instance != null)
+        if (shopManager != null)
         {
-            ShopManager.Instance.OnMoneyChanged -= UpdateMoneyDisplay;
-            ShopManager.Instance.OnPurchaseSuccess -= OnPurchaseSuccess;
-            ShopManager.Instance.OnPurchaseFailed -= OnPurchaseFailed;
+            shopManager.OnMoneyChanged -= UpdateMoneyDisplay;
+            shopManager.OnPurchaseSuccess -= OnPurchaseSuccess;
+            shopManager.OnPurchaseFailed -= OnPurchaseFailed;
         }
     }
     
@@ -117,7 +130,12 @@ public class ShopUI : MonoBehaviour
         
         isShopOpen = true;
         shopPanel.SetActive(true);
-        UpdateMoneyDisplay(ShopManager.Instance != null ? ShopManager.Instance.MyWallet : 0);
+        
+        if (shopManager != null)
+        {
+            UpdateMoneyDisplay(shopManager.MyWallet);
+        }
+        
         UpdateButtonStates();
     }
     
@@ -153,9 +171,9 @@ public class ShopUI : MonoBehaviour
     /// </summary>
     private void UpdateButtonStates()
     {
-        if (ShopManager.Instance == null) return;
+        if (shopManager == null) return;
         
-        int currentMoney = ShopManager.Instance.MyWallet;
+        int currentMoney = shopManager.MyWallet;
         
         // Update heal button
         UpdateButtonColor(healButton, currentMoney >= 100);
@@ -213,9 +231,9 @@ public class ShopUI : MonoBehaviour
     /// </summary>
     private void OnHealButtonClicked()
     {
-        if (ShopManager.Instance == null) return;
+        if (shopManager == null) return;
         
-        bool success = ShopManager.Instance.BuyHeal();
+        bool success = shopManager.BuyHeal();
         if (!success)
         {
             ShakeButton(healButton);
@@ -227,9 +245,9 @@ public class ShopUI : MonoBehaviour
     /// </summary>
     private void OnGrenadeButtonClicked()
     {
-        if (ShopManager.Instance == null) return;
+        if (shopManager == null) return;
         
-        bool success = ShopManager.Instance.BuyGrenade();
+        bool success = shopManager.BuyGrenade();
         if (!success)
         {
             ShakeButton(grenadeButton);
@@ -241,9 +259,9 @@ public class ShopUI : MonoBehaviour
     /// </summary>
     private void OnMolotovButtonClicked()
     {
-        if (ShopManager.Instance == null) return;
+        if (shopManager == null) return;
         
-        bool success = ShopManager.Instance.BuyMolotov();
+        bool success = shopManager.BuyMolotov();
         if (!success)
         {
             ShakeButton(molotovButton);
@@ -255,9 +273,9 @@ public class ShopUI : MonoBehaviour
     /// </summary>
     private void OnC4ButtonClicked()
     {
-        if (ShopManager.Instance == null) return;
+        if (shopManager == null) return;
         
-        bool success = ShopManager.Instance.BuyC4();
+        bool success = shopManager.BuyC4();
         if (!success)
         {
             ShakeButton(c4Button);
